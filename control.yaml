@@ -1,0 +1,2 @@
+views:
+    - views/foo.sql.jinja2

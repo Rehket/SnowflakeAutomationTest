@@ -1,4 +1,4 @@
 views:
     - views/foo.sql.jinja2
-    - views/weewoo.sql.jinja2
+    # - views/weewoo.sql.jinja2
 

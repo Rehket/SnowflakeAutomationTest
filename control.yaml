@@ -2,4 +2,5 @@ views:
     - views/foo.sql.jinja2
     - views/weewoo.sql.jinja2
     - views/test_view.sql.jinja2
-
+functions:
+    - functions/some_function.sql.jinja2

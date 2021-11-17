@@ -1,0 +1,17 @@
+CREATE or replace PROCEDURE PROC_FOO(SOURCE_TABLE VARCHAR)
+  RETURNS VARCHAR
+  LANGUAGE javascript
+  AS
+  $$
+  let source = SOURCE_TABLE;
+  let rs = snowflake.execute( { sqlText: `show columns in table ${source}` } );
+  let query_id = rs.getQueryId();
+  let valueArray = [];
+  let rs2 = snowflake.execute( { sqlText: `select * from table(result_scan('${query_id}'));`});
+  
+  while (rs2.next())  {
+    valueArray.push(rs2.getColumnValue('column_name'));
+  }
+  
+  return valueArray.join();
+  $$;

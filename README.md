@@ -1,6 +1,4 @@
 # SnowflakeAutomationTest
 A test repo to trying out snowflake automation. 
 
-Need more Data!
-
-MoaR DATA1
+Files and directories listed in `.sfignore` are ignored.
